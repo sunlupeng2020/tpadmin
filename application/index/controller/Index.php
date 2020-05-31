@@ -1,6 +1,8 @@
 <?php
 namespace app\index\controller;
 
+use app\index\model\Test;
+
 class Index
 {
     public function index()
@@ -11,5 +13,16 @@ class Index
     public function hello($name = 'ThinkPHP5')
     {
         return 'hello,' . $name;
+    }
+    public function test()
+    {
+        //添加一条记录
+        Test::create(['id'=>1, 'username' => 'test', 'score'=>1001]);
+        //查询id为1的记录
+        $test = Test::get(1);
+        //获取username字段的值
+        $username = $test->username;
+        Test::destroy(1);
+        return $username;
     }
 }
