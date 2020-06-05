@@ -25,4 +25,14 @@ class Index extends Common
         return $this->fetch();
     }
 
+    public function test1()
+    {
+        $this->success('成功');
+    }
+
+    public function test2()
+    {
+        $this->error('失败');
+    }
+
 }
