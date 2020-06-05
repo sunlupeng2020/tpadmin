@@ -3,7 +3,7 @@
 use think\migration\Migrator;
 use think\migration\db\Column;
 
-class AdminUser extends Migrator
+class Addpassword extends Migrator
 {
     /**
      * Change Method.
@@ -29,12 +29,8 @@ class AdminUser extends Migrator
     public function change()
     {
         $table = $this->table('admin_user',['engine'=>'InnoDB', 'collation' => 'utf8mb4_general_ci']);
-        $table ->addColumn('admin_role_id', 'integer', ['null' => false, 'default' =>0, 'comment' =>'角色id'])
-        ->addColumn('username', 'string',['limit' => 32, 'null' => false, 'default' => '','comment' => '用户名'])
-        //->addColumn('password', 'string',['limit' => 32, 'null' => false, 'default' => '','comment' => '密码'])
-        ->addColumn('salt', 'char', ['limit' => 32, 'null' =>false, 'default'=>'','comment' =>'密码salt'])
-        ->addIndex(['username'],['unique' =>true])
-        ->addTimestamps()
-        ->create();
+        $table ->addColumn('password', 'string',['limit' => 32, 'null' => false, 'default' => '','comment' => '密码'])
+        ->save();
+
     }
 }
