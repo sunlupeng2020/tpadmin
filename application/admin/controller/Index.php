@@ -1,11 +1,9 @@
 <?php
 namespace app\admin\controller;
 
-use think\Controller;
-
 use app\admin\validate\AdminUser as UserValidate;
 
-class Index extends Controller
+class Index extends Common
 {
     public function login()
     {
@@ -18,6 +16,9 @@ class Index extends Controller
             $validate = new UserValidate;
             if (!$validate->scene('login')->check($data)) {
                 $this->error('登录失败：' . $validate->getError() . '。');
+            }
+            if(!$this->auth->login($data['username'], $data['password'])){
+                $this->error('登录失败：'.$this->auth->getError() . '.');
             }
             $this->success('登录成功.');
         }
