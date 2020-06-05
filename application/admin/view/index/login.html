@@ -5,11 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="__CDN__/twitter-bootstrap/3.4.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="__CDN__/toastr.js/2.1.4/toastr.min.css">
-        <link rel="stylesheet" href="__STATIC__/css/main.css">
+        <link rel="stylesheet" href="__STATIC__/css/main.css?{if $Think.env.app_debug}_={:time()}{else /}v={$Think.config.tpadmin.version}{/if}">
         <script src="__CDN__/jquery/1.12.4/jquery.min.js"></script>
         <script src="__CDN__/twitter-bootstrap/3.4.1/js/bootstrap.min.js"></script>
         <script src="__CDN__/toastr.js/2.1.4/toastr.min.js"></script>
-        <script src="__STATIC__/js/main.js"></script> 
+        <script src="__STATIC__/js/main.js?{if $Think.env.app_debug}_={:time()}{else /}v={$Think.config.tpadmin.version}{/if}"></script> 
         <title>登录</title>
     </head>
     <body>
