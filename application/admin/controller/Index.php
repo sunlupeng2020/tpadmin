@@ -5,6 +5,7 @@ use app\admin\validate\AdminUser as UserValidate;
 
 class Index extends Common
 {
+    protected $checkLoginExclude = ['login'];
     public function login()
     {
         if($this->request->isPost()){
@@ -45,6 +46,11 @@ class Index extends Common
     public function test2()
     {
         $this->error('失败');
+    }
+    public function logout()
+    {
+        $this->auth->logout();
+        $this->redirect('Index/login');
     }
 
 }

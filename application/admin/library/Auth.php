@@ -43,6 +43,14 @@ class Auth
     {
         return md5(md5($password) . $salt);
     }
-
+    public function isLogin()
+    {
+        return Session::has($this->sessionName.'.id');
+    }
+    public function logout()
+    {
+        Session::delete($this->sessionName);
+        return true;
+    }
 
 }
