@@ -41,6 +41,12 @@
             </div>
         </div>
         <script>
+            main.init();
+            main.ajaxForm('.j-login', function(){
+                location.href = "{:url('Index/index')}";
+            },function(){
+                $('.login-captcha img').click();
+            });
             $('.login-captcha img').click(function() {
                 $(this).attr('src', '{:captcha_src()}?_='+Math.random());
             });

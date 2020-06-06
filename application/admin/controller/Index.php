@@ -24,6 +24,18 @@ class Index extends Common
         }
         return $this->fetch();
     }
+    // public function test1()
+    // {
+    //     $this->success('成功');
+    // }
+    // public function test2()
+    // {
+    //     $this->error('失败');
+    // }
+    public function index()
+    {
+        return '登录成功';
+    }
 
     public function test1()
     {

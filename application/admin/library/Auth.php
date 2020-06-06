@@ -26,6 +26,7 @@ class Auth
             $this->setError('用户名或密码不正确！');
             return false;            
         }
+        //执行到此说明用户名和密码正确，登录成功
         Session::set($this->sessionName, ['id' => $user->id]);
         return true;
     }

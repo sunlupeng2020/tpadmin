@@ -11,5 +11,4 @@ class Common extends Controller
     {
         $this->auth = Auth::getInstance();
     }
-
 }
